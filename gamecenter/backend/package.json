@@ -1,0 +1,22 @@
+{
+  "name": "racing_maze",
+  "version": "1.0.0",
+  "description": "Racing Maze API Application ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "js-base64": "^3.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.11.15",
+    "password-hash": "^1.2.2"
+  },
+  "devDependencies": {
+    "bson": "^4.2.2",
+    "nodemon": "^1.19.4"
+  }
+}

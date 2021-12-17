@@ -1,0 +1,131 @@
+<div class="main-container">
+
+    <div class="main text-white mx-auto my-auto justify-content">
+
+        <div id="navbar" class="d-flex p-2 mx-auto text-white bg-dark col-12 flex-column">
+            <header class="mb-auto text-center m-2">
+                <h1 id="logo-nom" class="float-md-start mx-5 my-0">GAMECENTER</h1>
+
+                <div class="menu">
+
+
+                <a class="white" href="http://gamecenter.leiven.fr">
+                <img src="http://mirrors.kodi.tv/addons/matrix/script.tvmaze.integration/icon.png" class="morpion"/>
+                <span id="header-span"> JOUER A RACING MAZE ICI</span></a>
+
+                </div>
+
+
+            </header>
+        </div>
+
+    </div>
+
+
+    <div>
+        <h1 class="mat-display-2" style="font-weight: 900; text-align: center; margin: 15px 0;">Tic-Tac-Toe</h1>
+        <div class="field d-flex justify-content-center">
+            <p class="current-status mat-display-0">Start the game by clicking the button below</p>
+        </div>
+        <div *ngIf="this.game.gameStatus === 0" class="field d-flex justify-content-center" style="width: 100%">
+            <form #idRoomForm="ngForm" (ngSubmit)="onSubmit(idRoomForm)">
+                <input type="number" name="idRoom" ngModel>
+                <button type="submit" [disabled]="!idRoomForm.valid" mat-raised-button color="accent"
+                        class="start-game-button">Start Game Now !
+                </button>
+            </form>
+        </div>
+
+        <div *ngIf="this.game.gameStatus === 1" class="gameboard">
+            <div id="divinfos">
+                <div (click)="leave()">
+                    <button mat-raised-button color="accent"><span class="material-icons">
+            arrow_back
+            </span>Retour
+                    </button>
+                </div>
+                <div>Id Room : {{id}}</div>
+            </div>
+
+            <div class="players player-one align-self-center">
+                <p class="playerOne mat-body-1 playerOne" style="font-weight: 700; margin: 0 0 10px 10px"></p>
+            </div>
+            <div class="gamefield container-fluid">
+                <div class="row">
+                    <div (click)="clickSubfield($event)" position="0" class="subfield col-4 position0"
+                         style="border-color:#E5E5E5; border-width: 0px 6.67px 6.67px 0px;"></div>
+                    <div (click)="clickSubfield($event)" position="1" class="subfield col-4 position1"
+                         style="border-color:#E5E5E5; border-width: 0px 6.67px 6.67px 6.67px;"></div>
+                    <div (click)="clickSubfield($event)" position="2" class="subfield col-4 position2"
+                         style="border-color:#E5E5E5; border-width: 0px 0px 6.67px 6.67px;"></div>
+                </div>
+                <div class="row">
+                    <div (click)="clickSubfield($event)" position="3" class="subfield col-4 position3"
+                         style="border-color:#E5E5E5; border-width: 6.67px 6.67px 6.67px 0px;"></div>
+                    <div (click)="clickSubfield($event)" position="4" class="subfield col-4 position4"
+                         style="border-color:#E5E5E5; border-width: 6.67px 6.67px 6.67px 6.67px;"></div>
+                    <div (click)="clickSubfield($event)" position="5" class="subfield col-4 position5"
+                         style="border-color:#E5E5E5; border-width: 6.67px 0px 6.67px 6.67px;"></div>
+                </div>
+                <div class="row">
+                    <div (click)="clickSubfield($event)" position="6" class="subfield col-4 position6"
+                         style="border-color:#E5E5E5; border-width: 6.67px 6.67px 0px 0px;"></div>
+                    <div (click)="clickSubfield($event)" position="7" class="subfield col-4 position7"
+                         style="border-color:#E5E5E5; border-width: 6.67px 6.67px 0px 6.67px;"></div>
+                    <div (click)="clickSubfield($event)" position="8" class="subfield col-4 position8"
+                         style="border-color:#E5E5E5; border-width: 6.67px 0px 0px 6.67px;"></div>
+                </div>
+            </div>
+
+            <div class="players player-two align-self-center">
+                <p class="playerTwo mat-body-1" style="font-weight: 700; margin : 0 10px 10px 0"></p></div>
+        </div>
+    </div>
+</div>
+
+<style>
+
+    @font-face {
+        font-family: GAMEGAME;
+        src: url("fonts/GAMEGAME.TTF")
+
+    }
+
+    @font-face {
+        font-family: CetaMono;
+        src: url("fonts/GUARALDO PERSONAL USE.ttf")
+    }
+
+    h1 {
+        font-family: Roboto, "Helvetica Neue", sans-serif;
+
+    }
+
+
+    div.menu {
+        text-align :right;
+    }
+
+    a.white {
+
+        vertical-align:middle;
+        line-height: 70px;
+        height : 70px;
+        text-align :right;
+    }
+
+    .morpion {
+        height : 70px;
+        width : 70px;
+    }
+
+    a {
+        text-decoration: none;
+
+    }
+    #header-span {
+        padding : 1em;
+        font-family: Roboto, "Helvetica Neue", sans-serif;
+    }
+
+</style>

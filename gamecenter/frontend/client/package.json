@@ -1,0 +1,39 @@
+{
+  "name": "lif",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve --host gamecenter.leiven.fr --port 80",
+    "build": "vue-cli-service build --host gamecenter.leiven.fr --port 80"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "core-js": "^3.6.5",
+    "jQuery": "^1.7.4",
+    "jquery": "^3.5.1",
+    "jsdom": "^16.4.0",
+    "location": "^0.0.1",
+    "moment": "^2.29.1",
+    "navigator": "^1.0.1",
+    "qs": "^6.10.1",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-vue": "^0.11.0",
+    "vue": "^2.6.11",
+    "vue-audio": "0.0.12",
+    "vue-router": "^3.2.0",
+    "vue-socket.io": "^3.0.10",
+    "vuex": "^3.4.0",
+    "vuex-persist": "^3.1.3",
+    "vuex-router": "^1.1.5",
+    "xmlhttprequest": "^1.8.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-plugin-vuex": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "sass": "^1.26.5",
+    "sass-loader": "^8.0.2",
+    "vue-template-compiler": "^2.6.11"
+  }
+}
